@@ -21,7 +21,7 @@ public class SystemSolverController {
 
   @RequestMapping("/")
   public String index(Model model, SystemOfEquations system) {
-    model.addAttribute("system", new SystemOfEquations());
+    model.addAttribute("system", system);
 
     String json = systemSolverService.solve(system);
     Solution solution = gson.fromJson(json, Solution.class);
